@@ -12,7 +12,7 @@ class Api::V1::ItemsController < ApplicationController
 
 
     def items_params
-        params.require(:item).permit(:item_name, :purchase_price, :date_purchased, :date_sold, :sold)
+        params.require(:item).permit(:item_name, :purchase_price, :date_purchased, :date_sold, :sold, :breakeven_point)
     end
 end
 
