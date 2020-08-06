@@ -12,6 +12,7 @@ class Api::V1::ItemsController < ApplicationController
             render json: @item
         else
             render json: {error: "Item was not saved.  Please try again."}
+        end
     end
 
     def show

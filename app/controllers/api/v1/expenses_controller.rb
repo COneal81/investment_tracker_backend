@@ -13,6 +13,7 @@ class Api::V1::ExpensesController < ApplicationController
             render json: @expense
         else
             render json: {error: "Your expense was not saved.  Please try again."}
+        end
     end
 
     def show
