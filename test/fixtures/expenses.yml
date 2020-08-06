@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  item: one
+  expense_amount: 1.5
+  date: 2020-08-05 19:56:34
+  destription: MyText
+
+two:
+  item: two
+  expense_amount: 1.5
+  date: 2020-08-05 19:56:34
+  destription: MyText
