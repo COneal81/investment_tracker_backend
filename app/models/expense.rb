@@ -3,4 +3,3 @@ class Expense < ApplicationRecord
 
   validates :item_id, :expense_amount, :date, :destription, presence: true
 end
-

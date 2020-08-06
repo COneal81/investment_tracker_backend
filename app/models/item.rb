@@ -1,6 +1,11 @@
 class Item < ApplicationRecord
     has_many :expenses
 
-    validate :item_name, :purchase_price, :date_purchased, presence: true
+    validates :item_name, :purchase_price, :date_purchased, presence: true
+
+    def breakeven(expense)
+        self.breakeven_point = self.breakeven_point + expense.expense_amount
+        self.save
+    end
 end
 

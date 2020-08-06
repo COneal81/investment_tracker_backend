@@ -11,8 +11,8 @@ Item.destroy_all
 Expense.destroy_all
 
 # Items
-old_desk = Item.create(item_name: "Old Desk", purchase_price: 25.00, date_purchased: "8/2/20", date_sold: "", sold: false)
-rocking_chair = Item.create(item_name: "Rocking Chair", purchase_price: 10.00, date_purchased: "1/1/11", date_sold: "1/10/11", sold: true)
+old_desk = Item.create(item_name: "Old Desk", purchase_price: 25.00, date_purchased: "8/2/20", date_sold: "", sold: false, breakeven_point: 0.00)
+rocking_chair = Item.create(item_name: "Rocking Chair", purchase_price: 10.00, date_purchased: "1/1/11", date_sold: "1/10/11", sold: true, breakeven_point: 0.00)
 
 
 # Expenses
