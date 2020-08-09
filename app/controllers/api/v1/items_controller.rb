@@ -7,6 +7,7 @@ class Api::V1::ItemsController < ApplicationController
     end
 
     def create
+        # binding.pry
         @item = Item.new(items_params)
         if @item.save
             render json: @item
