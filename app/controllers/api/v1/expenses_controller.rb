@@ -25,9 +25,11 @@ class Api::V1::ExpensesController < ApplicationController
     end
 
     def destroy
-        @expense = Expense.find(params[:id])
-        @expense.destroy
-        render json: {message: "#{@expense.item_name} has been removed."}
+        # byebug
+        @expense = Expense.find(params["id"])
+        @item = Item.find(@expense.item_id)
+         @expense.destroy
+        render json: @item
     end
 
     private
