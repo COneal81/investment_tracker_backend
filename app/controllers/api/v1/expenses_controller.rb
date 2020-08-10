@@ -9,7 +9,8 @@ class Api::V1::ExpensesController < ApplicationController
     def create
         @expense = @item.expenses.new(expenses_params)
         if @item.breakeven(@expense)
-            @expense.save
+            # byebug
+            
             # send bach the item b/c the item will have the expense associated with it so when we get to 
             # our reducer, instead of having to find that item, and replace it with the item that is coming back
             render json: @item
@@ -36,7 +37,7 @@ class Api::V1::ExpensesController < ApplicationController
     end
 
     def expenses_params
-        params.require(:item).permit(:item_id, :expense_amount, :date, :destription)
+        params.require(:expense).permit(:expense_amount, :date, :destription, :item_id)
     end
 
 
