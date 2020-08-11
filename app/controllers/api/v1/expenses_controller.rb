@@ -25,7 +25,7 @@ class Api::V1::ExpensesController < ApplicationController
     end
 
     def destroy
-        # byebug
+       byebug
         @expense = Expense.find(params["id"])
         @item = Item.find(@expense.item_id)
          @expense.destroy

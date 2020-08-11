@@ -1,5 +1,5 @@
 class Api::V1::ItemsController < ApplicationController
-    before_action :set_item, only: [:how, :update, :destroy]
+    before_action :set_item, only: [:show, :update, :destroy]
 
     def index
         @items = Item.all 
@@ -21,6 +21,17 @@ class Api::V1::ItemsController < ApplicationController
         render json: @item
     end
 
+    def update
+    #    byebug
+       @item = Item.find(params[:id])
+        @item.update(items_params)
+        @item.save
+            render json: @item
+       
+    end
+
+      
+
     def destroy
         @item.destroy
         render json: {message: "#{@item.item_name} has been removed."}
@@ -33,7 +44,7 @@ class Api::V1::ItemsController < ApplicationController
     end
 
     def items_params
-        params.require(:item).permit(:item_name, :purchase_price, :date_purchased, :date_sold, :sold, :breakeven_point)
+        params.require(:item).permit(:item_name, :purchase_price, :date_purchased, :date_sold, :sold, :breakeven_point, :id)
     end
 end
 
