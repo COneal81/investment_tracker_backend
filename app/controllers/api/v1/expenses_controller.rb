@@ -21,15 +21,19 @@ class Api::V1::ExpensesController < ApplicationController
 
     def show
         @expense = Expense.find(params[:id])
+        @item = Expense.find(@expense.item_id)
         render json: @expense
     end
 
     def destroy
-       byebug
+ 
         @expense = Expense.find(params["id"])
         @item = Item.find(@expense.item_id)
+        # byebug
+        if @item.breakeven_delete_expense(@expense)
          @expense.destroy
         render json: @item
+        end
     end
 
     private
