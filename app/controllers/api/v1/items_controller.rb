@@ -10,6 +10,7 @@ class Api::V1::ItemsController < ApplicationController
         # binding.pry
         @item = Item.new(items_params)
         if @item.save
+            @item.initial_breakeven
             render json: @item
         else
             render json: {error: "Item was not saved.  Please try again."}
